@@ -1,0 +1,24 @@
+
+15-02-2017 09:07:49:349 - I: 	Added Command MovementCommand(Right) for Player PlayerEntity(X:2, Y:2, Key:A)
+15-02-2017 09:07:49:535 - I: 	Added Command MovementCommand(Right) for Player PlayerEntity(X:18, Y:20, Key:B)
+15-02-2017 09:07:49:735 - I: 	Added Command MovementCommand(Down) for Player PlayerEntity(X:2, Y:19, Key:C)
+15-02-2017 09:07:49:952 - I: 	Added Command GameEngine.Commands.PlayerCommands.TriggerBombCommand for Player PlayerEntity(X:19, Y:2, Key:D)
+15-02-2017 09:07:49:952 - D: 	Beginning round processing
+15-02-2017 09:07:49:952 - D: 	Removing Bomb Explosions from map
+15-02-2017 09:07:49:952 - D: 	Decreasing Bomb Timers
+15-02-2017 09:07:49:952 - D: 	Detonating Bombs
+15-02-2017 09:07:49:952 - I: 	Detonating Bomb BombEntity(X:3, Y:4, Radius:1, Timer:0, Owner:A)
+15-02-2017 09:07:49:952 - I: 	Detonating Bomb BombEntity(X:3, Y:18, Radius:1, Timer:0, Owner:C)
+15-02-2017 09:07:49:952 - D: 	Processing Player Commands
+15-02-2017 09:07:49:952 - I: 	Trying to move player A to destination Location(X:3,Y:2)
+15-02-2017 09:07:49:952 - I: 	Trying to move player B to destination Location(X:19,Y:20)
+15-02-2017 09:07:49:952 - I: 	Trying to move player C to destination Location(X:2,Y:20)
+15-02-2017 09:07:49:952 - D: 	Applying player power ups
+15-02-2017 09:07:49:952 - D: 	Destroying marked entities
+15-02-2017 09:07:49:952 - D: 	Destroyed Entity DestructibleWallEntity(X:4, Y:4)
+15-02-2017 09:07:49:952 - D: 	Destroyed Entity DestructibleWallEntity(X:4, Y:18)
+15-02-2017 09:07:49:952 - I: 	Player PlayerEntity(X:3, Y:2, Key:A) has a movement coverage of 1,78% for the map
+15-02-2017 09:07:49:952 - I: 	Player PlayerEntity(X:19, Y:20, Key:B) has a movement coverage of 1,78% for the map
+15-02-2017 09:07:49:952 - I: 	Player PlayerEntity(X:2, Y:20, Key:C) has a movement coverage of 1,78% for the map
+15-02-2017 09:07:49:952 - I: 	Player PlayerEntity(X:19, Y:2, Key:D) has a movement coverage of 1,78% for the map
+15-02-2017 09:07:49:952 - D: 	Round processing complete

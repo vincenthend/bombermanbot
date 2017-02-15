@@ -1,0 +1,29 @@
+
+15-02-2017 09:07:55:628 - D: 	Executing bot with following commands ../Reference Bot\Reference\bin\Debug\Reference.exe D "E:\kuda\v1.2.6\Game Engine\Replays\580187095\21\D"
+15-02-2017 09:07:55:628 - I: 	Executing process ../Reference Bot\Reference\bin\Debug\Reference.exe D "E:\kuda\v1.2.6\Game Engine\Replays\580187095\21\D"
+15-02-2017 09:07:55:628 - I: 	Bot has 4000ms to run before it will be forcefully killed
+15-02-2017 09:07:55:791 - I: 	Output from bot: *********************
+15-02-2017 09:07:55:791 - I: 	Output from bot: *   ## # # # # ##.D *
+15-02-2017 09:07:55:791 - I: 	Output from bot: * * *#*#* * *#*#*.* *
+15-02-2017 09:07:55:791 - I: 	Output from bot: *A    ## # # ##  . #*
+15-02-2017 09:07:55:807 - I: 	Output from bot: *#* * * *#*#* * * *#*
+15-02-2017 09:07:55:807 - I: 	Output from bot: *# # ####   #### # #*
+15-02-2017 09:07:55:807 - I: 	Output from bot: *#*#*#* * * * *#*#*#*
+15-02-2017 09:07:55:807 - I: 	Output from bot: * #       #       # *
+15-02-2017 09:07:55:807 - I: 	Output from bot: * *#* *#*#*#*#* *#* *
+15-02-2017 09:07:55:807 - I: 	Output from bot: *# #    #####    # #*
+15-02-2017 09:07:55:807 - I: 	Output from bot: * * * * *# #* * * * *
+15-02-2017 09:07:55:807 - I: 	Output from bot: *# #    #####    # #*
+15-02-2017 09:07:55:807 - I: 	Output from bot: * *#* *#*#*#*#* *#* *
+15-02-2017 09:07:55:807 - I: 	Output from bot: * #       #       # *
+15-02-2017 09:07:55:807 - I: 	Output from bot: *#*#*#* * * * *#*#*#*
+15-02-2017 09:07:55:807 - I: 	Output from bot: *# # ####   #### # #*
+15-02-2017 09:07:55:807 - I: 	Output from bot: *#* * * *#*#* * * *#*
+15-02-2017 09:07:55:807 - I: 	Output from bot: *     ## # # ##   B *
+15-02-2017 09:07:55:807 - I: 	Output from bot: *C* *#*#* * *#*#* * *
+15-02-2017 09:07:55:807 - I: 	Output from bot: *  ### # # # # ##   *
+15-02-2017 09:07:55:807 - I: 	Output from bot: *********************
+15-02-2017 09:07:55:807 - I: 	Output from bot: Sending Back command TriggerBomb
+15-02-2017 09:07:55:809 - I: 	Output from bot: 
+15-02-2017 09:07:55:809 - E: 	Output from bot: 
+15-02-2017 09:07:55:811 - I: 	Your bots total execution time was 00:00:00.1712346

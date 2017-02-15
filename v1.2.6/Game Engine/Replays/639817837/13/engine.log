@@ -1,0 +1,18 @@
+
+15-02-2017 11:24:22:333 - I: 	Added Command GameEngine.Commands.PlayerCommands.TriggerBombCommand for Player PlayerEntity(X:5, Y:12, Key:A)
+15-02-2017 11:24:22:495 - I: 	Added Command MovementCommand(Left) for Player PlayerEntity(X:18, Y:20, Key:B)
+15-02-2017 11:24:22:495 - D: 	Beginning round processing
+15-02-2017 11:24:22:495 - D: 	Removing Bomb Explosions from map
+15-02-2017 11:24:22:495 - D: 	Decreasing Bomb Timers
+15-02-2017 11:24:22:495 - D: 	Detonating Bombs
+15-02-2017 11:24:22:495 - D: 	Processing Player Commands
+15-02-2017 11:24:22:513 - E: 	Failed to process command GameEngine.Commands.PlayerCommands.TriggerBombCommand for player PlayerEntity(X:5, Y:12, Key:A)GameEngine.Exceptions.InvalidCommandException: Player has no bombs to trigger
+   at GameEngine.Commands.PlayerCommands.TriggerBombCommand.PerformCommand(GameMap gameMap, PlayerEntity player, CommandTransaction commandTransaction) in w:\Projects\100k\2016\GitHub\Game Engine\Bomberman\GameEngine\Commands\PlayerCommands\TriggerBombCommand.cs:line 17
+   at GameEngine.Engine.GameRoundProcessor.ProcessPlayerCommands() in w:\Projects\100k\2016\GitHub\Game Engine\Bomberman\GameEngine\Engine\GameRoundProcessor.cs:line 310
+
+15-02-2017 11:24:22:517 - I: 	Trying to move player B to destination Location(X:17,Y:20)
+15-02-2017 11:24:22:517 - D: 	Applying player power ups
+15-02-2017 11:24:22:517 - D: 	Destroying marked entities
+15-02-2017 11:24:22:517 - I: 	Player PlayerEntity(X:5, Y:12, Key:A) has a movement coverage of 4,98% for the map
+15-02-2017 11:24:22:517 - I: 	Player PlayerEntity(X:17, Y:20, Key:B) has a movement coverage of 3,20% for the map
+15-02-2017 11:24:22:517 - D: 	Round processing complete

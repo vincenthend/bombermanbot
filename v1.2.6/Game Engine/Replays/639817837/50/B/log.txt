@@ -1,0 +1,30 @@
+
+15-02-2017 11:24:59:665 - D: 	Executing bot with following commands ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\50\B"
+15-02-2017 11:24:59:665 - I: 	Executing process ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\50\B"
+15-02-2017 11:24:59:665 - I: 	Bot has 4000ms to run before it will be forcefully killed
+15-02-2017 11:24:59:881 - I: 	Output from bot: *********************
+15-02-2017 11:24:59:881 - I: 	Output from bot: *   #  # # # #    # *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * *#*#*#* * *#*#*#* *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *   #...........#   *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *#* *.*#*#*#*#*.* * *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * # #.###   ###.# # *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * * *.* *#*#* *.* * *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *    ...  #...#.    *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *#* * *.*#*.*.*.* *#*
+15-02-2017 11:24:59:881 - I: 	Output from bot: *    ##.##..#.#...  *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * * * *.*#.#*.*#*.* *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *      .#####.## .  *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *#* * *.*#*#*.* *.*#*
+15-02-2017 11:24:59:881 - I: 	Output from bot: *     #.......#B..  *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * * * * *#*#* * * * *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * # # ###   ###     *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * * * *#*#*#*#* * * *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *   ## #     #      *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * *#*#*#* * *#* * * *
+15-02-2017 11:24:59:881 - I: 	Output from bot: * #    # # #        *
+15-02-2017 11:24:59:881 - I: 	Output from bot: *********************
+15-02-2017 11:24:59:881 - I: 	Output from bot: Executing move command
+15-02-2017 11:24:59:881 - I: 	Output from bot: Sending Back command MoveRight
+15-02-2017 11:24:59:881 - E: 	Output from bot: 
+15-02-2017 11:24:59:881 - I: 	Output from bot: 
+15-02-2017 11:24:59:897 - I: 	Your bots total execution time was 00:00:00.2227539

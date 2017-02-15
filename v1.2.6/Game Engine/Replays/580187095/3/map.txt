@@ -1,0 +1,58 @@
+Map Width: 21, Map Height: 21, Current Round: 3, Seed: 580187095, PlayerBounty: 350
+#####################
+#A +++ + + + + +++3D#
+#3# #+#+# # #+#+# # #
+#+ +  ++ + + ++  + +#
+#+# # # #+#+# # # #+#
+#+ + ++++   ++++ + +#
+#+#+#+# # # # #+#+#+#
+# +       +       + #
+# #+# #+#+#+#+# #+# #
+#+ +    +++++    + +#
+# # # # #+$+# # # # #
+#+ +    +++++    + +#
+# #+# #+#+#+#+# #+# #
+# +       +       + #
+#+#+#+# # # # #+#+#+#
+#+ + ++++   ++++ + +#
+#+# # # #+#+# # # #+#
+#+ +  ++ + + ++  + +#
+#3# #+#+# # #+#+# # #
+#C +++ + + + + +++3B#
+#####################
+---------------------------
+Player Name: John
+Key: A
+Points: 0
+Status: Alive
+Bombs: {x:2,y:3,fuse:3,radius:1}
+BombBag: 0
+BlastRadius: 1
+---------------------------
+---------------------------
+Player Name: John
+Key: B
+Points: 0
+Status: Alive
+Bombs: {x:19,y:20,fuse:3,radius:1}
+BombBag: 0
+BlastRadius: 1
+---------------------------
+---------------------------
+Player Name: John
+Key: C
+Points: 0
+Status: Alive
+Bombs: {x:2,y:19,fuse:3,radius:1}
+BombBag: 0
+BlastRadius: 1
+---------------------------
+---------------------------
+Player Name: John
+Key: D
+Points: 0
+Status: Alive
+Bombs: {x:19,y:2,fuse:3,radius:1}
+BombBag: 0
+BlastRadius: 1
+---------------------------

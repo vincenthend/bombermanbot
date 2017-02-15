@@ -1,0 +1,31 @@
+
+15-02-2017 11:25:38:082 - D: 	Executing bot with following commands ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\87\B"
+15-02-2017 11:25:38:082 - I: 	Executing process ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\87\B"
+15-02-2017 11:25:38:083 - I: 	Bot has 4000ms to run before it will be forcefully killed
+15-02-2017 11:25:38:233 - I: 	Output from bot: Targeting Previous Node Location(2,13)
+15-02-2017 11:25:38:248 - I: 	Output from bot: *********************
+15-02-2017 11:25:38:248 - I: 	Output from bot: *   #  # # # #    # *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * *#*#*#* * *#*#*#* *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *   ## #     # ##   *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *#* * *#*#*#*#* * * *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * # # ###   ### # # *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * * * * * *#* * * * *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *             #     *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *#* * * * *#*A* * *#*
+15-02-2017 11:25:38:248 - I: 	Output from bot: *    ###   ###      *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * * * * *  #* * * * *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *.......#####       *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *.* * *.*#*#* * * *#*
+15-02-2017 11:25:38:248 - I: 	Output from bot: *     #......B      *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * * * * *#*#* * * * *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * # # ###   ##      *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * * * *#*#*#*#* * * *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *   ## #     #      *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * *#*#*#* * *#* * * *
+15-02-2017 11:25:38:248 - I: 	Output from bot: * #    # # #        *
+15-02-2017 11:25:38:248 - I: 	Output from bot: *********************
+15-02-2017 11:25:38:248 - I: 	Output from bot: Executing move command
+15-02-2017 11:25:38:248 - I: 	Output from bot: Sending Back command MoveLeft
+15-02-2017 11:25:38:264 - I: 	Output from bot: 
+15-02-2017 11:25:38:264 - E: 	Output from bot: 
+15-02-2017 11:25:38:265 - I: 	Your bots total execution time was 00:00:00.1829723

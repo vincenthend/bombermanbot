@@ -1,0 +1,32 @@
+
+15-02-2017 09:08:38:877 - I: 	Added Command MovementCommand(Down) for Player PlayerEntity(X:6, Y:7, Key:A)
+15-02-2017 09:08:39:131 - I: 	Added Command MovementCommand(Right) for Player PlayerEntity(X:15, Y:10, Key:B)
+15-02-2017 09:08:39:363 - I: 	Added Command MovementCommand(Down) for Player PlayerEntity(X:10, Y:15, Key:C)
+15-02-2017 09:08:39:611 - I: 	Added Command MovementCommand(Right) for Player PlayerEntity(X:13, Y:8, Key:D)
+15-02-2017 09:08:39:611 - D: 	Beginning round processing
+15-02-2017 09:08:39:611 - D: 	Removing Bomb Explosions from map
+15-02-2017 09:08:39:611 - D: 	Decreasing Bomb Timers
+15-02-2017 09:08:39:611 - D: 	Detonating Bombs
+15-02-2017 09:08:39:611 - I: 	Detonating Bomb BombEntity(X:4, Y:6, Radius:2, Timer:0, Owner:A)
+15-02-2017 09:08:39:611 - I: 	Detonating Bomb BombEntity(X:14, Y:12, Radius:4, Timer:0, Owner:B)
+15-02-2017 09:08:39:611 - I: 	Detonating Bomb BombEntity(X:8, Y:14, Radius:2, Timer:0, Owner:C)
+15-02-2017 09:08:39:611 - D: 	Processing Player Commands
+15-02-2017 09:08:39:611 - I: 	Trying to move player A to destination Location(X:6,Y:8)
+15-02-2017 09:08:39:611 - I: 	Trying to move player B to destination Location(X:16,Y:10)
+15-02-2017 09:08:39:611 - I: 	Trying to move player C to destination Location(X:10,Y:16)
+15-02-2017 09:08:39:611 - I: 	Trying to move player D to destination Location(X:14,Y:8)
+15-02-2017 09:08:39:611 - D: 	Applying player power ups
+15-02-2017 09:08:39:611 - D: 	Destroying marked entities
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:2, Y:6)
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:4, Y:7)
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:14, Y:9)
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:13, Y:12)
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:18, Y:12)
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:8, Y:13)
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:14, Y:13)
+15-02-2017 09:08:39:611 - D: 	Destroyed Entity DestructibleWallEntity(X:8, Y:16)
+15-02-2017 09:08:39:611 - I: 	Player PlayerEntity(X:6, Y:8, Key:A) has a movement coverage of 6,05% for the map
+15-02-2017 09:08:39:611 - I: 	Player PlayerEntity(X:16, Y:10, Key:B) has a movement coverage of 9,61% for the map
+15-02-2017 09:08:39:611 - I: 	Player PlayerEntity(X:10, Y:16, Key:C) has a movement coverage of 8,54% for the map
+15-02-2017 09:08:39:611 - I: 	Player PlayerEntity(X:14, Y:8, Key:D) has a movement coverage of 6,76% for the map
+15-02-2017 09:08:39:611 - D: 	Round processing complete

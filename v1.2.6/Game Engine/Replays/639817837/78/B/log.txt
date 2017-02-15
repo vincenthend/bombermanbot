@@ -1,0 +1,31 @@
+
+15-02-2017 11:25:29:890 - D: 	Executing bot with following commands ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\78\B"
+15-02-2017 11:25:29:890 - I: 	Executing process ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\78\B"
+15-02-2017 11:25:29:892 - I: 	Bot has 4000ms to run before it will be forcefully killed
+15-02-2017 11:25:30:083 - I: 	Output from bot: Targeting Previous Node Location(2,13)
+15-02-2017 11:25:30:100 - I: 	Output from bot: *********************
+15-02-2017 11:25:30:100 - I: 	Output from bot: *   #  # # # #    # *
+15-02-2017 11:25:30:100 - I: 	Output from bot: * *#*#*#* * *#*#*#* *
+15-02-2017 11:25:30:100 - I: 	Output from bot: *   ## #     # ##   *
+15-02-2017 11:25:30:100 - I: 	Output from bot: *#* * *#*#*#*#* * * *
+15-02-2017 11:25:30:100 - I: 	Output from bot: * # # ###   ### # # *
+15-02-2017 11:25:30:100 - I: 	Output from bot: * * * * * *#* * * * *
+15-02-2017 11:25:30:100 - I: 	Output from bot: *             #     *
+15-02-2017 11:25:30:100 - I: 	Output from bot: *#* * * * *#* * * *#*
+15-02-2017 11:25:30:100 - I: 	Output from bot: *  ............B    *
+15-02-2017 11:25:30:100 - I: 	Output from bot: * *.* * *A #* * * * *
+15-02-2017 11:25:30:100 - I: 	Output from bot: *...   ######       *
+15-02-2017 11:25:30:101 - I: 	Output from bot: *.* * * *#*#* * * *#*
+15-02-2017 11:25:30:101 - I: 	Output from bot: *     #   #         *
+15-02-2017 11:25:30:101 - I: 	Output from bot: * * * * *#*#* * * * *
+15-02-2017 11:25:30:101 - I: 	Output from bot: * # # ###   ##      *
+15-02-2017 11:25:30:101 - I: 	Output from bot: * * * *#*#*#*#* * * *
+15-02-2017 11:25:30:101 - I: 	Output from bot: *   ## #     #      *
+15-02-2017 11:25:30:101 - I: 	Output from bot: * *#*#*#* * *#* * * *
+15-02-2017 11:25:30:101 - I: 	Output from bot: * #    # # #        *
+15-02-2017 11:25:30:101 - I: 	Output from bot: *********************
+15-02-2017 11:25:30:101 - I: 	Output from bot: Executing place bomb command
+15-02-2017 11:25:30:101 - I: 	Output from bot: Sending Back command PlaceBomb
+15-02-2017 11:25:30:103 - E: 	Output from bot: 
+15-02-2017 11:25:30:103 - I: 	Output from bot: 
+15-02-2017 11:25:30:105 - I: 	Your bots total execution time was 00:00:00.2145323

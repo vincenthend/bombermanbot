@@ -1,0 +1,18 @@
+
+07-02-2017 11:47:54:236 - I: 	Added Command MovementCommand(Down) for Player PlayerEntity(X:2, Y:8, Key:A)
+07-02-2017 11:47:54:533 - I: 	Added Command MovementCommand(Down) for Player PlayerEntity(X:18, Y:19, Key:B)
+07-02-2017 11:47:54:533 - D: 	Beginning round processing
+07-02-2017 11:47:54:533 - D: 	Removing Bomb Explosions from map
+07-02-2017 11:47:54:533 - D: 	Decreasing Bomb Timers
+07-02-2017 11:47:54:533 - D: 	Detonating Bombs
+07-02-2017 11:47:54:533 - D: 	Processing Player Commands
+07-02-2017 11:47:54:534 - E: 	Failed to process command MovementCommand(Down) for player PlayerEntity(X:2, Y:8, Key:A)GameEngine.Exceptions.InvalidCommandException: Cannot move to Location(X:2,Y:9), DestructibleWallEntity(X:2, Y:9) already occupies this space
+   at GameEngine.Commands.PlayerCommands.MovementCommand.PerformCommand(GameMap gameMap, PlayerEntity player, CommandTransaction commandTransaction) in w:\Projects\100k\2016\GitHub\Game Engine\Bomberman\GameEngine\Commands\PlayerCommands\MovementCommand.cs:line 52
+   at GameEngine.Engine.GameRoundProcessor.ProcessPlayerCommands() in w:\Projects\100k\2016\GitHub\Game Engine\Bomberman\GameEngine\Engine\GameRoundProcessor.cs:line 310
+
+07-02-2017 11:47:54:534 - I: 	Trying to move player B to destination Location(X:18,Y:20)
+07-02-2017 11:47:54:534 - D: 	Applying player power ups
+07-02-2017 11:47:54:534 - D: 	Destroying marked entities
+07-02-2017 11:47:54:535 - I: 	Player PlayerEntity(X:2, Y:8, Key:A) has a movement coverage of 2,85% for the map
+07-02-2017 11:47:54:535 - I: 	Player PlayerEntity(X:18, Y:20, Key:B) has a movement coverage of 2,49% for the map
+07-02-2017 11:47:54:535 - D: 	Round processing complete

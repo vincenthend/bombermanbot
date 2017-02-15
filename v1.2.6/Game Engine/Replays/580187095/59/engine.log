@@ -1,0 +1,21 @@
+
+15-02-2017 09:08:31:452 - I: 	Added Command MovementCommand(Down) for Player PlayerEntity(X:4, Y:4, Key:A)
+15-02-2017 09:08:31:806 - I: 	Added Command MovementCommand(Up) for Player PlayerEntity(X:16, Y:13, Key:B)
+15-02-2017 09:08:32:006 - I: 	Added Command MovementCommand(Up) for Player PlayerEntity(X:6, Y:15, Key:C)
+15-02-2017 09:08:32:169 - I: 	Added Command MovementCommand(Down) for Player PlayerEntity(X:16, Y:6, Key:D)
+15-02-2017 09:08:32:169 - D: 	Beginning round processing
+15-02-2017 09:08:32:169 - D: 	Removing Bomb Explosions from map
+15-02-2017 09:08:32:169 - D: 	Decreasing Bomb Timers
+15-02-2017 09:08:32:169 - D: 	Detonating Bombs
+15-02-2017 09:08:32:169 - D: 	Processing Player Commands
+15-02-2017 09:08:32:169 - I: 	Trying to move player A to destination Location(X:4,Y:5)
+15-02-2017 09:08:32:169 - I: 	Trying to move player B to destination Location(X:16,Y:12)
+15-02-2017 09:08:32:169 - I: 	Trying to move player C to destination Location(X:6,Y:14)
+15-02-2017 09:08:32:169 - I: 	Trying to move player D to destination Location(X:16,Y:7)
+15-02-2017 09:08:32:169 - D: 	Applying player power ups
+15-02-2017 09:08:32:169 - D: 	Destroying marked entities
+15-02-2017 09:08:32:169 - I: 	Player PlayerEntity(X:4, Y:5, Key:A) has a movement coverage of 5,34% for the map
+15-02-2017 09:08:32:169 - I: 	Player PlayerEntity(X:16, Y:12, Key:B) has a movement coverage of 7,47% for the map
+15-02-2017 09:08:32:169 - I: 	Player PlayerEntity(X:6, Y:14, Key:C) has a movement coverage of 6,41% for the map
+15-02-2017 09:08:32:169 - I: 	Player PlayerEntity(X:16, Y:7, Key:D) has a movement coverage of 4,98% for the map
+15-02-2017 09:08:32:169 - D: 	Round processing complete

@@ -1,0 +1,17 @@
+
+15-02-2017 11:25:00:527 - I: 	Added Command DoNothingCommand for Player PlayerEntity(X:8, Y:9, Key:A)
+15-02-2017 11:25:00:712 - I: 	Added Command GameEngine.Commands.PlayerCommands.TriggerBombCommand for Player PlayerEntity(X:17, Y:14, Key:B)
+15-02-2017 11:25:00:712 - D: 	Beginning round processing
+15-02-2017 11:25:00:712 - D: 	Removing Bomb Explosions from map
+15-02-2017 11:25:00:712 - D: 	Decreasing Bomb Timers
+15-02-2017 11:25:00:712 - D: 	Detonating Bombs
+15-02-2017 11:25:00:712 - I: 	Detonating Bomb BombEntity(X:10, Y:8, Radius:1, Timer:0, Owner:A)
+15-02-2017 11:25:00:712 - D: 	Processing Player Commands
+15-02-2017 11:25:00:712 - D: 	Applying player power ups
+15-02-2017 11:25:00:712 - D: 	Destroying marked entities
+15-02-2017 11:25:00:712 - D: 	Destroyed Entity DestructibleWallEntity(X:10, Y:7)
+15-02-2017 11:25:00:712 - D: 	Destroyed Entity DestructibleWallEntity(X:11, Y:8)
+15-02-2017 11:25:00:712 - D: 	Destroyed Entity DestructibleWallEntity(X:10, Y:9)
+15-02-2017 11:25:00:712 - I: 	Player PlayerEntity(X:8, Y:9, Key:A) has a movement coverage of 7,83% for the map
+15-02-2017 11:25:00:712 - I: 	Player PlayerEntity(X:17, Y:14, Key:B) has a movement coverage of 7,12% for the map
+15-02-2017 11:25:00:712 - D: 	Round processing complete

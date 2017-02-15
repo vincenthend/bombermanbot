@@ -1,0 +1,30 @@
+
+15-02-2017 11:25:41:826 - D: 	Executing bot with following commands ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\91\B"
+15-02-2017 11:25:41:826 - I: 	Executing process ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\639817837\91\B"
+15-02-2017 11:25:41:826 - I: 	Bot has 4000ms to run before it will be forcefully killed
+15-02-2017 11:25:42:059 - I: 	Output from bot: *********************
+15-02-2017 11:25:42:059 - I: 	Output from bot: *   #  # # # #    # *
+15-02-2017 11:25:42:059 - I: 	Output from bot: * *#*#*#* * *#*#*#* *
+15-02-2017 11:25:42:060 - I: 	Output from bot: *   ## #     # ##   *
+15-02-2017 11:25:42:060 - I: 	Output from bot: *#* * *#*#*#*#* * * *
+15-02-2017 11:25:42:060 - I: 	Output from bot: * # # ###   ### # # *
+15-02-2017 11:25:42:060 - I: 	Output from bot: * * * * * *#* * * * *
+15-02-2017 11:25:42:060 - I: 	Output from bot: *          A  #     *
+15-02-2017 11:25:42:060 - I: 	Output from bot: *#* * * * *#* * * *#*
+15-02-2017 11:25:42:060 - I: 	Output from bot: *    ###   ##.....  *
+15-02-2017 11:25:42:060 - I: 	Output from bot: * * * * * ..* * *.* *
+15-02-2017 11:25:42:060 - I: 	Output from bot: *      ##...     .  *
+15-02-2017 11:25:42:060 - I: 	Output from bot: *#* * * *.*.* * *.*#*
+15-02-2017 11:25:42:060 - I: 	Output from bot: *     #  .#B     .  *
+15-02-2017 11:25:42:060 - I: 	Output from bot: * * * * *.*#* * *.* *
+15-02-2017 11:25:42:060 - I: 	Output from bot: * # #..... ...   .  *
+15-02-2017 11:25:42:060 - I: 	Output from bot: * * *.*#*#*.*.* *.* *
+15-02-2017 11:25:42:061 - I: 	Output from bot: *   #...   . .   .  *
+15-02-2017 11:25:42:061 - I: 	Output from bot: * *#*#*.* *.*.* *.* *
+15-02-2017 11:25:42:061 - I: 	Output from bot: * #    ..... .....  *
+15-02-2017 11:25:42:061 - I: 	Output from bot: *********************
+15-02-2017 11:25:42:061 - I: 	Output from bot: Executing place bomb command
+15-02-2017 11:25:42:061 - I: 	Output from bot: Sending Back command PlaceBomb
+15-02-2017 11:25:42:063 - E: 	Output from bot: 
+15-02-2017 11:25:42:063 - I: 	Output from bot: 
+15-02-2017 11:25:42:065 - I: 	Your bots total execution time was 00:00:00.2383941
