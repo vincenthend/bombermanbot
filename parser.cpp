@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -46,23 +47,24 @@ void ParseBlocks(string str, GameState& G, int x, int y)
 // contoh format : 
 // untuk IW : {"Entity":{"$type":"Domain.Entities.IndestructibleWallEntity, Domain","Location":{"X":1,"Y":2}},"Bomb":null,"PowerUp":null,"Exploding":false,"Location":{"X":1,"Y":2}}
 {
+
 	int i, j, idx, start;
 	string tempstr;
-	for(i=0; str[i] != ':'; i++);
+	for (i = 0; str[i] != ':'; i++);
 	i++;
 	if (str[i] == '{')
 	{
-		if (str.find("IndestructibleWallEntity",i) != string::npos)
+		if (str.find("IndestructibleWallEntity", i) != string::npos)
 		{
 			G.GB[x][y].Entity = "IW";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("DestructibleWallEntity",i) != string::npos)
+		else if (str.find("DestructibleWallEntity", i) != string::npos)
 		{
 			G.GB[x][y].Entity = "DW";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("PlayerEntity",i) != string::npos)
+		else if (str.find("PlayerEntity", i) != string::npos)
 		{
 			G.GB[x][y].Entity = "Player";
 			G.GB[x][y].Exploding = false;
@@ -70,13 +72,13 @@ void ParseBlocks(string str, GameState& G, int x, int y)
 		else
 		{
 			G.GB[x][y].Entity = "Null";
-			G.GB[x][y].Exploding = false;			
+			G.GB[x][y].Exploding = false;
 		}
 	}
-	i = str.find("Bomb",i);
-	for(; str[i] != ':'; i++);
+	i = str.find("Bomb", i);
+	for (; str[i] != ':'; i++);
 	i++;
-	if (str[i] == '{')
+	if (str.find("Owner", i) != string::npos)
 	{
 		G.GB[x][y].Entity = "Bomb";
 		G.GB[x][y].Exploding = false;
@@ -84,50 +86,50 @@ void ParseBlocks(string str, GameState& G, int x, int y)
 		idx = G.NeffBomb;
 		G.B[idx].LocX = x;
 		G.B[idx].LocY = y;
-		i = str.find("Key",i);
-		for(; str[i] != ':'; i++);
-		i = i+2;
+		i = str.find("Key", i);
+		for (; str[i] != ':'; i++);
+		i = i + 2;
 		G.B[idx].PlayerKey = str[i];
 		// skip smp owner kelar
-		for(; str[i] != '}'; i++);
-		i = str.find("Radius",i);
-		for(; str[i] != ':'; i++);
+		for (; str[i] != '}'; i++);
+		i = str.find("Radius", i);
+		for (; str[i] != ':'; i++);
 		i++;
 		start = i;
-		for(; str[i] != ','; i++);
-		G.B[idx].BombRadius = stoi(str.substr(start,i-start));
-		i = str.find("Timer",i);
-		for(; str[i] != ':'; i++);
+		for (; str[i] != ','; i++);
+		G.B[idx].BombRadius = stoi(str.substr(start, i - start));
+		i = str.find("Timer", i);
+		for (; str[i] != ':'; i++);
 		i++;
 		start = i;
-		for(; str[i] != ','; i++);
-		G.B[idx].Timer = stoi(str.substr(start,i-start));
+		for (; str[i] != ','; i++);
+		G.B[idx].Timer = stoi(str.substr(start, i - start));
 		G.NeffBomb++;
 	}
 	i = str.find("PowerUp");
-	for(; str[i] != ':'; i++);
+	for (; str[i] != ':'; i++);
 	i++;
 	if (str[i] == '{')
 	{
 		//"PowerUp":{"$type":"Domain.Entities.PowerUps.SuperPowerUp, Domain","Location":{"X":11,"Y":11}}
 		//"PowerUp":{"$type":"Domain.Entities.PowerUps.BombBagPowerUpEntity, Domain","Location":{"X":6,"Y":2}}
 		//"PowerUp":{"$type":"Domain.Entities.PowerUps.BombRaduisPowerUpEntity, Domain","Location":{"X":14,"Y":14}}
-		if (str.find("SuperPowerUp",i) != string::npos)
+		if (str.find("SuperPowerUp", i) != string::npos)
 		{
 			G.GB[x][y].Entity = "PU.Super";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("BombBagPowerUpEntity",i) != string::npos)
+		else if (str.find("BombBagPowerUpEntity", i) != string::npos)
 		{
 			G.GB[x][y].Entity = "PU.BombBag";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("BombRaduisPowerUpEntity",i) != string::npos)
+		else if (str.find("BombRaduisPowerUpEntity", i) != string::npos)
 		{
 			G.GB[x][y].Entity = "PU.Radius";
 			G.GB[x][y].Exploding = false;
 		}
-	}	
+	}
 }
 void ParseEntities2(string str, GameState& G, int IDX, int mode)
 {
@@ -245,12 +247,13 @@ void ParseEntities(string str, GameState& G, int IDX)
 }
 
 
-int main()
+int _tmain(int argc, _TCHAR* argv[])
 {
 	string fileContent;
 	string line;
 	string J;
-	ifstream myfile("state.json");
+	string filePath = argv[2];
+	ifstream myfile(filePath + "/" + "state.json");
 	if (myfile.is_open())
 	{
 		while (getline(myfile, line))
@@ -343,5 +346,116 @@ int main()
 		i++;
 	}
 
+
+	// BAGIAN AI
+	// Move Up :1
+	// Move Left : 2
+	// Move Right : 3
+	// Move Down : 4
+	// Place Bomb : 5
+
+	// Do Nothing : 7
+
+	// outputkan ke 	
+	cout << "Writing move file " << filePath + "/" + "move.txt" << std::endl;
+	ofstream outfile(filePath + "/" + "move.txt");
+	
+
+	// TESTING BOT
+	//liat apa masih ada tembok di sumbu x
+	char lalala = argv[1][0];
+	int KEY;
+	if (lalala == 'A') KEY = 0;
+	else if (lalala == 'B') KEY = 1;
+	i = 0;
+	bool found = false;
+
+	bool adabom = false;
+	//cek apakah di area bom blast, jika ia menghindar
+	//cek apakah ada bom yg satu sumbu
+	while ((!adabom) && (i <= G.NeffBomb))
+	{
+		if (G.B[i].LocY == G.RPE[KEY].LocY) // masih taru bom satu sumbu Y
+		{
+			adabom = true;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	if (adabom)
+	{
+		outfile << 2 << std::endl;
+	
+	/*
+		if (G.B[i].LocX == G.RPE[KEY].LocX)
+		{
+			
+			if (G.GB[i + 1][G.RPE[KEY].LocY].Entity == "DW")
+			{
+				outfile << 2 << std::endl;
+			}
+			else
+			{
+				outfile << 3 << std::endl;
+			}
+		}
+		else if (G.GB[G.B[i].LocX][G.RPE[KEY].LocY - 1].Entity != "IW")
+		{
+			outfile << 4 << std::endl;
+		}
+		else if (G.GB[G.B[i].LocX][G.RPE[KEY].LocY - 1].Entity != "IW")
+		{
+			outfile << 1 << std::endl;
+		}
+		else if (G.B[i].LocX < G.RPE[KEY].LocX)
+		{
+			outfile << 3 << std::endl;
+		}
+		else
+		{
+			outfile << 2 << std::endl;
+		}*/
+	}
+	else
+	{
+		i = 1;
+		found = false;
+		while ((!found) && (i < 23))
+		{
+			if (G.GB[i][G.RPE[KEY].LocY].Entity == "DW")
+			{
+				found = true;
+			}
+			else
+			{
+				i++;
+			}
+		}
+		if (found)
+		{
+			if ((i == (G.RPE[KEY].LocX - 1)) || (i == (G.RPE[KEY].LocX + 1)))
+			{
+				outfile << 5 << std::endl;
+			}
+			else if (i < G.RPE[KEY].LocX)
+			{
+				outfile << 2 << std::endl;
+			}
+			else
+			{
+				outfile << 3 << std::endl;
+			}
+		}
+		else if (G.GB[G.RPE[KEY].LocX - 1][G.RPE[KEY].LocY].Entity == "IW")
+		{
+			outfile << 4 << std::endl;
+		}
+		else
+		{
+			outfile << 7 << std::endl;
+		}
+	}
 	return 0;
 }
