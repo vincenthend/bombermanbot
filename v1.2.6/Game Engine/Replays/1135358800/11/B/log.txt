@@ -1,0 +1,31 @@
+
+18-02-2017 11:08:41:513 - I: 	Bot is sending to many do nothing commands, in order to save the game the player will plant a bomb and kill itself soon
+18-02-2017 11:08:41:513 - D: 	Executing bot with following commands ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\1135358800\11\B"
+18-02-2017 11:08:41:513 - I: 	Executing process ../Reference Bot\Reference\bin\Debug\Reference.exe B "E:\kuda\v1.2.6\Game Engine\Replays\1135358800\11\B"
+18-02-2017 11:08:41:513 - I: 	Bot has 4000ms to run before it will be forcefully killed
+18-02-2017 11:08:41:699 - I: 	Output from bot: *********************
+18-02-2017 11:08:41:699 - I: 	Output from bot: *   # #  ###  #    #*
+18-02-2017 11:08:41:699 - I: 	Output from bot: * *#* * * * * * *#* *
+18-02-2017 11:08:41:699 - I: 	Output from bot: *    # # # # # #    *
+18-02-2017 11:08:41:699 - I: 	Output from bot: *A* *#* * * * *#* * *
+18-02-2017 11:08:41:699 - I: 	Output from bot: *  ##    ###    ##  *
+18-02-2017 11:08:41:699 - I: 	Output from bot: * * * *#* * *#* * * *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * #   ## # # ##   # *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * * *#* *#*#* *#* * *
+18-02-2017 11:08:41:700 - I: 	Output from bot: *  # ## ##### ## #  *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * * * * *#.#* * * * *
+18-02-2017 11:08:41:700 - I: 	Output from bot: *  # ## ##..# ## #  *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * * *#* *#*.* *#* * *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * #   ## # ...#   # *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * * * *#* * *.* * * *
+18-02-2017 11:08:41:700 - I: 	Output from bot: *  ##    ### ...##  *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * * *#* * * * *.* *#*
+18-02-2017 11:08:41:700 - I: 	Output from bot: *    # # # # # ...  *
+18-02-2017 11:08:41:700 - I: 	Output from bot: * *#* * * * * * *.* *
+18-02-2017 11:08:41:700 - I: 	Output from bot: *#    #  ###  # #..B*
+18-02-2017 11:08:41:700 - I: 	Output from bot: *********************
+18-02-2017 11:08:41:701 - I: 	Output from bot: Executing move command
+18-02-2017 11:08:41:701 - I: 	Output from bot: Sending Back command MoveLeft
+18-02-2017 11:08:41:703 - E: 	Output from bot: 
+18-02-2017 11:08:41:703 - I: 	Output from bot: 
+18-02-2017 11:08:41:704 - I: 	Your bots total execution time was 00:00:00.1788237

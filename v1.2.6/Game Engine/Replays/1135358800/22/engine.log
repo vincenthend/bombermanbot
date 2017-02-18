@@ -1,0 +1,15 @@
+
+18-02-2017 11:08:51:103 - I: 	Added Command PlaceBombCommand for Player PlayerEntity(X:3, Y:12, Key:A)
+18-02-2017 11:08:51:103 - I: 	Added Command GameEngine.Commands.PlayerCommands.TriggerBombCommand for Player PlayerEntity(X:20, Y:20, Key:B)
+18-02-2017 11:08:51:103 - D: 	Beginning round processing
+18-02-2017 11:08:51:103 - D: 	Removing Bomb Explosions from map
+18-02-2017 11:08:51:103 - D: 	Decreasing Bomb Timers
+18-02-2017 11:08:51:103 - D: 	Detonating Bombs
+18-02-2017 11:08:51:103 - I: 	Detonating Bomb BombEntity(X:20, Y:20, Radius:1, Timer:0, Owner:B)
+18-02-2017 11:08:51:103 - D: 	Processing Player Commands
+18-02-2017 11:08:51:103 - I: 	Player PlayerEntity(X:20, Y:20, Key:B) has been killed, and the command GameEngine.Commands.PlayerCommands.TriggerBombCommand will be ignored
+18-02-2017 11:08:51:103 - D: 	Applying player power ups
+18-02-2017 11:08:51:103 - D: 	Destroying marked entities
+18-02-2017 11:08:51:103 - D: 	Destroyed Entity PlayerEntity(X:20, Y:20, Key:B)
+18-02-2017 11:08:51:103 - I: 	Player PlayerEntity(X:3, Y:12, Key:A) has a movement coverage of 4,98% for the map
+18-02-2017 11:08:51:103 - D: 	Round processing complete
