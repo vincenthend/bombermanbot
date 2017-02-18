@@ -1,30 +1,32 @@
+#include "stdafx.h"
 #include "parse.h"
 #include <iostream>
 #include <fstream>
 #include <string>
+using namespace std;
 
 void ParseBlocks(string str, GameState& G, int x, int y)
-// contoh format :
+// contoh format : 
 // untuk IW : {"Entity":{"$type":"Domain.Entities.IndestructibleWallEntity, Domain","Location":{"X":1,"Y":2}},"Bomb":null,"PowerUp":null,"Exploding":false,"Location":{"X":1,"Y":2}}
 {
 
-	int i, j, idx, start;
+	int i, idx, start;
 	string tempstr;
-	for (i = 0; str[i] != ':'; i++);
+	for(i=0; str[i] != ':'; i++);
 	i++;
 	if (str[i] == '{')
 	{
-		if (str.find("IndestructibleWallEntity", i) != string::npos)
+		if (str.find("IndestructibleWallEntity",i) != string::npos)
 		{
 			G.GB[x][y].Entity = "IW";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("DestructibleWallEntity", i) != string::npos)
+		else if (str.find("DestructibleWallEntity",i) != string::npos)
 		{
 			G.GB[x][y].Entity = "DW";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("PlayerEntity", i) != string::npos)
+		else if (str.find("PlayerEntity",i) != string::npos)
 		{
 			G.GB[x][y].Entity = "Player";
 			G.GB[x][y].Exploding = false;
@@ -32,62 +34,65 @@ void ParseBlocks(string str, GameState& G, int x, int y)
 		else
 		{
 			G.GB[x][y].Entity = "Null";
-			G.GB[x][y].Exploding = false;
+			G.GB[x][y].Exploding = false;			
 		}
 	}
-	i = str.find("Bomb", i);
-	for (; str[i] != ':'; i++);
+	i = str.find("Bomb",i);
+	for(; str[i] != ':'; i++);
 	i++;
-	if (str.find("Owner", i) != string::npos)
+	if (str.find("Owner",i) != string::npos)
 	{
 		G.GB[x][y].Entity = "Bomb";
 		G.GB[x][y].Exploding = false;
+		//"Bomb":{"Owner":{"Name":"John","Key":"B","Points":22,"Killed":false,"BombBag":2,"BombRadius":1,"Location":{"X":20,"Y":18}},"BombRadius":1,"BombTimer":7,"IsExploding":false,"Location":{"X":20,"Y":18}}
 		idx = G.NeffBomb;
 		G.B[idx].LocX = x;
 		G.B[idx].LocY = y;
-		i = str.find("Key", i);
-		for (; str[i] != ':'; i++);
-		i = i + 2;
+		i = str.find("Key",i);
+		for(; str[i] != ':'; i++);
+		i = i+2;
 		G.B[idx].PlayerKey = str[i];
 		// skip smp owner kelar
-		for (; str[i] != '}'; i++);
-		i = str.find("Radius", i);
-		for (; str[i] != ':'; i++);
+		for(; str[i] != '}'; i++);
+		i = str.find("Radius",i);
+		for(; str[i] != ':'; i++);
 		i++;
 		start = i;
-		for (; str[i] != ','; i++);
-		G.B[idx].BombRadius = stoi(str.substr(start, i - start));
-		i = str.find("Timer", i);
-		for (; str[i] != ':'; i++);
+		for(; str[i] != ','; i++);
+		G.B[idx].BombRadius = stoi(str.substr(start,i-start));
+		i = str.find("Timer",i);
+		for(; str[i] != ':'; i++);
 		i++;
 		start = i;
-		for (; str[i] != ','; i++);
-		G.B[idx].Timer = stoi(str.substr(start, i - start));
+		for(; str[i] != ','; i++);
+		G.B[idx].Timer = stoi(str.substr(start,i-start));
 		G.NeffBomb++;
 	}
 	i = str.find("PowerUp");
-	for (; str[i] != ':'; i++);
+	for(; str[i] != ':'; i++);
 	i++;
 	if (str[i] == '{')
 	{
-		if (str.find("SuperPowerUp", i) != string::npos)
+		//"PowerUp":{"$type":"Domain.Entities.PowerUps.SuperPowerUp, Domain","Location":{"X":11,"Y":11}}
+		//"PowerUp":{"$type":"Domain.Entities.PowerUps.BombBagPowerUpEntity, Domain","Location":{"X":6,"Y":2}}
+		//"PowerUp":{"$type":"Domain.Entities.PowerUps.BombRaduisPowerUpEntity, Domain","Location":{"X":14,"Y":14}}
+		if (str.find("SuperPowerUp",i) != string::npos)
 		{
 			G.GB[x][y].Entity = "PU.Super";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("BombBagPowerUpEntity", i) != string::npos)
+		else if (str.find("BombBagPowerUpEntity",i) != string::npos)
 		{
 			G.GB[x][y].Entity = "PU.BombBag";
 			G.GB[x][y].Exploding = false;
 		}
-		else if (str.find("BombRaduisPowerUpEntity", i) != string::npos)
+		else if (str.find("BombRaduisPowerUpEntity",i) != string::npos)
 		{
 			G.GB[x][y].Entity = "PU.Radius";
 			G.GB[x][y].Exploding = false;
 		}
-	}
+	}	
 }
-
 void ParseEntities2(string str, GameState& G, int IDX, int mode)
 {
 	if (mode == 1)
@@ -134,9 +139,9 @@ void ParseEntities2(string str, GameState& G, int IDX, int mode)
 		for(; str[i] != '}'; i++);
 		tempstr = str.substr(idx, i-idx) + '\0';
 
-		G.RPE[IDX].LocY = stoi(tempstr);
+		G.RPE[IDX].LocY = stoi(tempstr);		
 	}
-}
+} 
 
 void ParseEntities(string str, GameState& G, int IDX)
 // Json yang masuk ke dalam prosedur ini adalah isi dari salah satu RegisteredPlayerEntities
@@ -167,6 +172,7 @@ void ParseEntities(string str, GameState& G, int IDX)
 				for(;str[i] != '}'; i++);
 				{
 				tempstr = str.substr(idx,i-idx+1) + '\0';
+						
 				ParseEntities2(tempstr,G,IDX,mode);
 				mode = 0;
 				}
@@ -177,6 +183,7 @@ void ParseEntities(string str, GameState& G, int IDX)
 				{
 					// parsing
 					tempstr = str.substr(idx,i-idx) + '\0';
+								
 					ParseEntities2(tempstr,G,IDX,mode);
 					mode = 0;
 				}
@@ -201,64 +208,80 @@ void ParseEntities(string str, GameState& G, int IDX)
 	}
 }
 
-void Parse(string filePath, GameState& G){
-		string fileContent;
-		string line;
-		string J;
-		ifstream myfile(filePath + "/" + "state.json");
-		if (myfile.is_open())
+
+void Parse(string filepath, GameState& G)
+{
+	string fileContent;
+	string line;
+	string J;
+	ifstream myfile(filepath);
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line))
 		{
-			while (getline(myfile, line))
-			{
-				fileContent += line += "\n";
-			}
-			myfile.close();
+			fileContent += line += "\n";
 		}
-		J = fileContent;
-		size_t i = 0;
-		int length, idx;
-		int bracket = 0;
-		while (J[i] != '[') i++;
-		i++; idx = i; // index pertama
-		int numberPlayer = 0;
-		while (J[i] != ']')
+		myfile.close();
+	}
+	J = fileContent;
+	size_t i = 0;
+	int length, idx;
+	int bracket = 0;
+	while (J[i] != '[') i++;
+	i++; idx = i; // index pertama
+	int numberPlayer = 0;
+	while (J[i] != ']')
+	{
+		if (J[i] == '{')
 		{
-			if (J[i] == '{')
+			if (bracket == 0)
 			{
-				if (bracket == 0)
-				{
-					idx = i;
-				}
-				bracket++;
+				idx = i;
 			}
-			else if (J[i] == '}')
+			bracket++;
+		}
+		else if (J[i] == '}')
+		{
+			if (bracket == 1)
 			{
-				if (bracket == 1)
-				{
-					length = i - idx + 1;
-					string temp = J.substr(idx,length) + '\0';
-					ParseEntities(temp,G,numberPlayer);
-					numberPlayer++;
-				}
-				bracket--;
+				length = i - idx + 1;
+				string temp = J.substr(idx,length) + '\0';
+				ParseEntities(temp,G,numberPlayer);
+				numberPlayer++; 
 			}
-			i++;
+			bracket--;
+		}
+		i++;
 	}
 	G.NeffRPE = numberPlayer-1;
+	
+	// BAGIAN PARSING MAPHEIGHT & WIDTH
+	i = J.find("MapHeight",i);
+	for(;J[i]!=':';i++);
+	i++;
+	idx = i;
+	for(;J[i]!=',';i++);
+	G.MapHeight = stoi(J.substr(idx,i-idx));
+	i = J.find("MapWidth",i);
+	for(;J[i]!=':';i++);
+	i++;
+	idx = i;
+	for(;J[i]!=',';i++);
+	G.MapWidth = stoi(J.substr(idx,i-idx));
 
 	int x, y;
 	string tempstr;
-	G.GB = new GameBlocks*[23];
+	G.GB = new GameBlocks*[G.MapHeight+1];
 	for (int itera = 0; itera < 23; itera++)
 	{
-		G.GB[itera] = new GameBlocks [23];
+		G.GB[itera] = new GameBlocks [G.MapWidth+1];
 	}
 	G.NeffBomb = 0;
 	x = 1;
 	while (J[i] != '[') i++;
 	while (J[i] != ']')
 	{
-
+		
 		for(;J[i] != '['; i++);
 		for(;J[i] != '['; i++);
 		bracket = 0;
@@ -279,18 +302,13 @@ void Parse(string filePath, GameState& G){
 				bracket--;
 				if (bracket == 0)
 				{
-
+					
 					tempstr = J.substr(idx,i-idx) + '\0';
 					ParseBlocks(tempstr,G, x,y);
-					if (G.GB[x][y].Entity == "IW") cout << "#";
-					else if (G.GB[x][y].Entity == "DW") cout << "+";
-					else cout << " ";
 					y++;
 				}
 			}
 		}
-		cout << endl;
 		x++;
 		i++;
 	}
-}
