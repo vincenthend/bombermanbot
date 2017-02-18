@@ -1,8 +1,0 @@
-{
-	"Author":"John Doe",
-    "Email":"john.doe@example.com",
-    "NickName" :"John",
-    "BotType": "Java",
-    "ProjectLocation" : "",
-    "RunFile" : "target\\SampleBotJava-1.0-SNAPSHOT.jar"
-}
