@@ -10,7 +10,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 	{
 		tengah = false;
 	}
-	// cek kanan
+	// cek kanan 
 	bool kanan, kekanan; // kanan true jika ada bom di kanan
 	i = 1;
 	kekanan = true;
@@ -38,6 +38,11 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 				kanan = false;
 				kekanan = true;
 			}
+		}
+		else
+		{
+			kanan = false;
+			kekanan = true;
 		}
 	}
 	
@@ -70,6 +75,11 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 				kekiri = true;
 			}
 		}
+		else
+		{
+			kiri = false;
+			kekiri = true;
+		}
 	}
 
 	// cek atas
@@ -100,6 +110,11 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 				atas = false;
 				keatas = true;
 			}
+		}
+		else
+		{
+			atas = false;
+			keatas = true;
 		}
 	}
 
@@ -132,18 +147,24 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 				kebawah = true;
 			}
 		}
+		else
+		{
+			bawah = false;
+			kebawah = true;
+		}
 	}
 	//cek
 	{
-	IsSafe = kanan || tengah || atas || kiri || bawah;
+	IsSafe = tengah || kanan || atas || kiri || bawah;
 		IsSafe = !(IsSafe);
 		if (!IsSafe)
 		{
-			if (kekanan) path = 3;
-			else if (kekiri) path = 2;
+			if (kekiri) path = 2;
+			else if (kekanan) path = 3;
 			else if (keatas) path = 1;
 			else if (kebawah) path = 4;
-			else path = 7;
+			else 
+				path = 7;
 		}
 	}
 }
