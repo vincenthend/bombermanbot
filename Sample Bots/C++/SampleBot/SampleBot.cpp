@@ -38,7 +38,7 @@ void readStateFile(string filePath)
 		myfile.close();
 	}
 
-	
+
 }
 
 void writeMoveFile(string filePath)
@@ -48,7 +48,7 @@ void writeMoveFile(string filePath)
 
 	if (outfile.is_open())
 	{
-		random_device rd; 
+		random_device rd;
 		mt19937 rng(rd());
 		uniform_int_distribution<int> uni(1, 6);
 		outfile << uni(rng) << std::endl;

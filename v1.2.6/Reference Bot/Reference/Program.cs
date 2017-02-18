@@ -40,7 +40,7 @@ namespace Reference
                 var command = gameStrategy.ExecuteStrategy(map, playerKey);
 
                 Console.WriteLine("Sending Back command " + command);
-                File.WriteAllText(Path.Combine(outputLocation, "move.txt"), ((int)command).ToString());
+                File.WriteAllText(Path.Combine(outputLocation, "move.txt"), (outputLocation));
 
                 return 0;
             }
