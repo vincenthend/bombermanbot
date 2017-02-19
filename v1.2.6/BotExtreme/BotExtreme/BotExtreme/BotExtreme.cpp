@@ -10,6 +10,13 @@ using namespace std;
 const int distOffset = -5; //Offset for targetfinding before switching to the least priority
 const int nodeOffset = 1; //Offset for pathfinding; Max Node Offset = 10
 
+struct BT
+{
+	bool bolret;
+	int step;
+	int path;
+};
+
 struct Point {
 	int x = 0;
 	int y = 0;
@@ -37,13 +44,17 @@ void FindGameObj(Point* PowerUpLoc, Point* WallLoc, GameState& G, int& PUCount, 
 	}
 }
 
-void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
+void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 {
 	int i, j;
 	bool tengah;
+	timerbomb = 0;
 	if ((G.GB[P.x][P.y].Entity == "Bomb"))
 	{
 		tengah = true;
+		j = 0;
+		while ((G.B[j].LocX != P.x) || (G.B[j].LocY != P.y)) j++;
+		timerbomb = G.B[j].Timer;
 	}
 	else
 	{
@@ -76,6 +87,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 			{
 				kanan = true;
 				kekanan = false;
+				timerbomb = G.B[j].Timer;
 			}
 			else
 			{
@@ -111,7 +123,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 			// j adalah id bom
 			if (P.x <= (G.B[j].LocX + G.B[j].BombRadius))
 			{
-
+				timerbomb = G.B[j].Timer;
 				kiri = true;
 				kekiri = false;
 			}
@@ -148,6 +160,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 			// j adalah id bom
 			if (P.y <= (G.B[j].LocY + G.B[j].BombRadius))
 			{
+				timerbomb = G.B[j].Timer;
 				atas = true;
 				keatas = false;
 			}
@@ -184,6 +197,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 			// j adalah id bom
 			if (P.y >= (G.B[j].LocY - G.B[j].BombRadius))
 			{
+				timerbomb = G.B[j].Timer;
 				bawah = true;
 				kebawah = false;
 			}
@@ -200,19 +214,87 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 		}
 	}
 	//cek
+	IsSafe = tengah || kanan || atas || kiri || bawah;
+	IsSafe = !(IsSafe);
+}
+
+BT BomTengah(GameState& G, Point P, int timerbomb)
+{
+	BT ret;
+	if (timerbomb == 0)
 	{
-		IsSafe = tengah || kanan || atas || kiri || bawah;
-		IsSafe = !(IsSafe);
-		if (!IsSafe)
+		ret.bolret = false;
+		ret.step = 99;
+		ret.path = 7;
+	}
+	else if ((G.GB[P.x][P.y].Entity == "IW") || (G.GB[P.x][P.y].Entity == "DW"))
+	{
+		ret.bolret = false;
+		ret.step = 99;
+		ret.path = 7;
+	}
+	else
+	{
+		bool issafe;
+		int sampah;
+		FindSafe(G, P, issafe, sampah);
+		if (issafe)
 		{
-			if (kekiri) path = 2;
-			else if (kekanan) path = 3;
-			else if (keatas) path = 1;
-			else if (kebawah) path = 4;
+			cout << "ISSAFE" << endl;
+			ret.bolret = true;
+			ret.step = 1;
+			ret.path = 7;
+		}
+		else
+		{
+			int * arr;
+			BT u, d, l, r;
+			arr = new int[5];
+			cout << P.x << P.y << endl;
+			// cek atas
+			P.y = P.y - 1;
+			u = BomTengah(G, P, timerbomb - 1);
+			arr[1] = u.step;
+			P.y = P.y + 1;
+			// cek bawah
+			P.y = P.y + 1;
+			d = BomTengah(G, P, timerbomb - 1);
+			arr[4] = d.step;
+			P.y = P.y - 1;
+			// cek kiri
+			P.x = P.x - 1;
+			l = BomTengah(G, P, timerbomb - 1);
+			arr[2] = l.step;
+			P.x = P.x + 1;
+			// cek kanan
+			P.x = P.x + 1;
+			r = BomTengah(G, P, timerbomb - 1);
+			arr[3] = r.step;
+			P.x = P.x - 1;
+
+			//hasilnya masukin array -> cari minnya -> idnya siapa
+			ret.bolret = u.bolret || d.bolret || l.bolret || r.bolret;
+			if (ret.bolret)
+			{
+				ret.path = 1;
+				for (int i = 2; i < 5; i++)
+				{
+					if (arr[ret.path] > arr[i])
+					{
+						ret.path = i;
+					}
+				}
+				ret.step = arr[ret.path] + 1;
+			}
 			else
-				path = 7;
+			{
+				ret.path = 7;
+				ret.step = 99;
+			}
 		}
 	}
+	cout << P.x << P.y << ret.bolret << ret.path << timerbomb << endl;
+	return (ret);
 }
 
 bool WallInRange(const Point& PosStart, const Point& PosEnd, const GameState& G) {
@@ -481,7 +563,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	safenext = true;
 	safe = true;
 
-	FindSafe(G, CurPos, safe, move);
+	int timbomb;
+	FindSafe(G, CurPos, safe, timbomb);
 	if (safe) {
 		move = FindPath(targetLoc, CurPos, G, G.RPE[PlayerID].BombRadius);
 		if (move == 1) {
@@ -508,6 +591,10 @@ int _tmain(int argc, _TCHAR* argv[])
 		if (!safenext) {
 			move = 7;
 		}
+	}
+	else {
+		BT a = BomTengah(G, CurPos, timbomb);
+		move = a.path;
 	}
 
 	///////////////////
