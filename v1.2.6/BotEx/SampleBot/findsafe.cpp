@@ -21,11 +21,16 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 	}
 	else
 	{
-		while (G.GB[P.x + i][P.y].Entity == "Null") i++; // skip null, berenti saat entitynya bukan null
+		while (G.GB[P.x + i][P.y].Entity == "Null")
+		{
+			i++; // skip Null, berenti saat entitynya bukan Null
+		}
 		if (G.GB[P.x + i][P.y].Entity == "Bomb")
 		{
 			//cari id bom
+
 			j = 0;
+
 			while (G.B[j].LocX != (P.x + i)) j++;
 			// j adalah id bom
 			if (P.x >= (G.B[j].LocX - G.B[j].BombRadius))
@@ -57,15 +62,17 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 	}
 	else
 	{
-		while (G.GB[P.x - i][P.y].Entity == "Null") i++; // skip null, berenti saat entitynya bukan null
+		while (G.GB[P.x - i][P.y].Entity == "Null") i++; // skip Null, berenti saat entitynya bukan Null
 		if (G.GB[P.x - i][P.y].Entity == "Bomb")
 		{
 			//cari id bom
+
 			j = 0;
 			while (G.B[j].LocX != (P.x - i)) j++;
 			// j adalah id bom
 			if (P.x <= (G.B[j].LocX + G.B[j].BombRadius))
 			{
+
 				kiri = true;
 				kekiri = false;
 			}
@@ -93,7 +100,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 	}
 	else
 	{
-		while (G.GB[P.x][P.y - i].Entity == "Null") i++; // skip null, berenti saat entitynya bukan null
+		while (G.GB[P.x][P.y - i].Entity == "Null") i++; // skip Null, berenti saat entitynya bukan Null
 		if (G.GB[P.x][P.y - i].Entity == "Bomb")
 		{
 			//cari id bom
@@ -129,7 +136,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 	}
 	else
 	{
-		while (G.GB[P.x][P.y + i].Entity == "Null") i++; // skip null, berenti saat entitynya bukan null
+		while (G.GB[P.x][P.y + i].Entity == "Null") i++; // skip Null, berenti saat entitynya bukan Null
 		if (G.GB[P.x][P.y + i].Entity == "Bomb")
 		{
 			//cari id bom
