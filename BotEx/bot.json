@@ -1,8 +1,0 @@
-{
-	"Author":"John Doe",
-    "Email":"john.doe@example.com",
-    "NickName" :"John",
-    "BotType": "CPlusPlus",
-    "ProjectLocation" : "SampleBot\\",
-    "RunFile" : "SampleBot\\Release\\SampleBot.exe"
-}
