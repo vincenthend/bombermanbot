@@ -37,7 +37,7 @@ struct Bomb
 
 struct GameState
 {
-	RegisteredPlayerEntities RPE[4];
+	RegisteredPlayerEntities RPE[12];
 	int NeffRPE;
 	GameBlocks **GB;
 	int MapHeight;
