@@ -1,0 +1,9 @@
+
+19-02-2017 11:18:18:552 - I: 	Executing process E:\kuda\v1.2.6\Game Engine\Calibrations\BotCalibrationCPlusPlus.exe B "E:\kuda\v1.2.6\Game Engine\Replays\1540998548\0\B"
+19-02-2017 11:18:18:567 - I: 	Bot calibration complete and can run an additional 20ms due to environment startup
+19-02-2017 11:18:18:576 - D: 	Executing bot with following commands ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\1540998548\0\B"
+19-02-2017 11:18:18:576 - I: 	Executing process ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\1540998548\0\B"
+19-02-2017 11:18:18:577 - I: 	Bot has 4000ms to run before it will be forcefully killed
+19-02-2017 11:18:18:606 - I: 	Output from bot: 
+19-02-2017 11:18:18:607 - E: 	Output from bot: 
+19-02-2017 11:18:18:607 - I: 	Your bots total execution time was 00:00:00.0307803

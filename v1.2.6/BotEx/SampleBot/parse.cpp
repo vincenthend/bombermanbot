@@ -214,6 +214,7 @@ void Parse(string filepath, GameState& G)
 	string line;
 	string J;
 	ifstream myfile(filepath + "/../" + "state.json");
+	
 	if (myfile.is_open())
 	{
 		while (getline(myfile, line))
@@ -222,6 +223,7 @@ void Parse(string filepath, GameState& G)
 		}
 		myfile.close();
 	}
+	
 	J = fileContent;
 	size_t i = 0;
 	int length, idx;
@@ -269,17 +271,17 @@ void Parse(string filepath, GameState& G)
 	G.MapWidth = stoi(J.substr(idx, i - idx));
 	int x, y;
 	string tempstr;
-	G.GB = new GameBlocks*[G.MapHeight + 1];
-	for (int itera = 0; itera < 23; itera++)
+	G.GB = new GameBlocks*[G.MapHeight + 2];
+	int itera;
+	for (itera = 0; itera < G.MapHeight + 1 ; itera++)
 	{
-		G.GB[itera] = new GameBlocks[G.MapWidth + 1];
+		G.GB[itera] = new GameBlocks[G.MapWidth + 2];
 	}
 	G.NeffBomb = 0;
 	x = 1;
 	while (J[i] != '[') i++;
 	while (J[i] != ']')
 	{
-
 		for (;J[i] != '['; i++);
 		for (;J[i] != '['; i++);
 		bracket = 0;

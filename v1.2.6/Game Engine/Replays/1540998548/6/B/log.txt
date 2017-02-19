@@ -1,0 +1,8 @@
+
+19-02-2017 11:18:21:527 - I: 	Player Command MovementCommand(Down) failed because Cannot move to Location(X:20,Y:21), IndestructibleWallEntity(X:20, Y:21) already occupies this space
+19-02-2017 11:18:21:916 - D: 	Executing bot with following commands ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\1540998548\6\B"
+19-02-2017 11:18:21:916 - I: 	Executing process ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\1540998548\6\B"
+19-02-2017 11:18:21:918 - I: 	Bot has 4000ms to run before it will be forcefully killed
+19-02-2017 11:18:21:948 - E: 	Output from bot: 
+19-02-2017 11:18:21:948 - I: 	Output from bot: 
+19-02-2017 11:18:21:948 - I: 	Your bots total execution time was 00:00:00.0315651

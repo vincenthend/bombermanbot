@@ -1,0 +1,7 @@
+
+19-02-2017 11:48:17:417 - D: 	Executing bot with following commands ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\359702553\2\B"
+19-02-2017 11:48:17:417 - I: 	Executing process ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\359702553\2\B"
+19-02-2017 11:48:17:419 - I: 	Bot has 4000ms to run before it will be forcefully killed
+19-02-2017 11:48:17:433 - E: 	Output from bot: 
+19-02-2017 11:48:17:433 - I: 	Output from bot: 
+19-02-2017 11:48:17:434 - I: 	Your bots total execution time was 00:00:00.0165371
