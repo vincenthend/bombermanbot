@@ -1,0 +1,11 @@
+
+19-02-2017 12:16:32:865 - D: 	Executing bot with following commands ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\610923749\1\B"
+19-02-2017 12:16:32:865 - I: 	Executing process ../BotEx\SampleBot\Release\SampleBot.exe B "E:\kuda\v1.2.6\Game Engine\Replays\610923749\1\B"
+19-02-2017 12:16:32:867 - I: 	Bot has 4000ms to run before it will be forcefully killed
+19-02-2017 12:16:32:881 - I: 	Output from bot: CurLoc X: 20 Y: 19
+19-02-2017 12:16:32:881 - I: 	Output from bot: Selected node number :80, X: 20 Y:16with 3 walls
+19-02-2017 12:16:32:881 - I: 	Output from bot: Selected move : 5
+19-02-2017 12:16:32:881 - I: 	Output from bot: Writing move file E:\kuda\v1.2.6\Game Engine\Replays\610923749\1\B/move.txt
+19-02-2017 12:16:32:883 - I: 	Output from bot: 
+19-02-2017 12:16:32:883 - E: 	Output from bot: 
+19-02-2017 12:16:32:883 - I: 	Your bots total execution time was 00:00:00.0184102
