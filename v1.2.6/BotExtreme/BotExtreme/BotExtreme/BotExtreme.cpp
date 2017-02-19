@@ -7,7 +7,7 @@
 #include <cmath>
 using namespace std;
 
-const int distOffset = 3; //Offset for targetfinding before switching to the least priority
+const int distOffset = -5; //Offset for targetfinding before switching to the least priority
 const int nodeOffset = 1; //Offset for pathfinding; Max Node Offset = 10
 
 struct Point {
@@ -215,7 +215,27 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& path)
 	}
 }
 
-int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
+bool WallInRange(const Point& PosStart, const Point& PosEnd, const GameState& G) {
+	int i;
+	bool inRange = false;
+	if (PosStart.x == PosEnd.x) {
+		for (i = min(PosStart.y, PosEnd.y);i <= max(PosStart.y, PosEnd.y);i++) {
+			if (G.GB[PosStart.x][i].Entity == "DW" || G.GB[PosStart.x][i].Entity == "Player") {
+				inRange = true;
+			}
+		}
+	}
+	else {
+		for (i = min(PosStart.x, PosEnd.x);i <= max(PosStart.x, PosEnd.x);i++) {
+			if (G.GB[i][PosStart.y].Entity == "DW" || G.GB[i][PosStart.y].Entity == "Player") {
+				inRange = true;
+			}
+		}
+	}
+	return inRange;
+}
+
+int FindPath(const Point& Target, const Point& CurLoc, const GameState& G, const int& BombRange) {
 	//F.S. menemukan node dengan wall paling banyak dan jarak yang berkurang
 	Point* Node; //Candidate Set
 	int* P;
@@ -284,16 +304,23 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 	dNode = 999;
 
 	//Find the most wall, with the most block, and reduced distance
-	for (i = 1; i <= NodeIdx; i++) {
-		dTarget = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
-		if (P[i] >= max && dNode >= dTarget && P[i] >= 0 && (Node[i].x != CurLoc.x || Node[i].y != CurLoc.y)) //Selection function
-		{
-			dNode = dTarget;
-			max = P[i];
-			j = i;
+	if (dCurLoc == 1) //Special case with target distance = 1
+	{ 
+		Node[0].x = Target.x;
+		Node[0].y = Target.y;
+		j = 0;
+	}
+	else {
+		for (i = 1; i <= NodeIdx; i++) {
+			dTarget = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
+			if (P[i] >= max && dNode >= dTarget && P[i] >= 0 && (Node[i].x != CurLoc.x || Node[i].y != CurLoc.y)) //Selection function
+			{
+				dNode = dTarget;
+				max = P[i];
+				j = i;
+			}
 		}
 	}
-
 	//Returned selected node j
 	cout << "Target X: " << Target.x << " Y: " << Target.y << endl;
 	cout << "CurLoc X: " << CurLoc.x << " Y: " << CurLoc.y << endl;
@@ -303,9 +330,14 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 	// Move Decision //
 	///////////////////
 	move = 7;
+	Point PosEnd,PosStart;
 	if (Node[j].x == CurLoc.x) {
 		if (Node[j].y > CurLoc.y) {
-			if (G.GB[CurLoc.x][CurLoc.y + 1].Entity == "DW") {
+			PosEnd.x = CurLoc.x;
+			PosEnd.y = CurLoc.y + BombRange;
+			PosStart.x = CurLoc.x;
+			PosStart.y = CurLoc.y + 1;
+			if (WallInRange(PosStart,PosEnd,G)) {
 				move = 5;
 			}
 			else {
@@ -313,7 +345,11 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 			}
 		}
 		else {
-			if (G.GB[CurLoc.x][CurLoc.y - 1].Entity == "DW") {
+			PosEnd.x = CurLoc.x;
+			PosEnd.y = CurLoc.y - BombRange;
+			PosStart.x = CurLoc.x;
+			PosStart.y = CurLoc.y - 1;
+			if (WallInRange(PosStart, PosEnd, G)) {
 				move = 5;
 			}
 			else {
@@ -323,7 +359,11 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 	}
 	else if (Node[j].y == CurLoc.y) {
 		if (Node[j].x > CurLoc.x) {
-			if (G.GB[CurLoc.x + 1][CurLoc.y].Entity == "DW") {
+			PosEnd.x = CurLoc.x + BombRange;
+			PosEnd.y = CurLoc.y;
+			PosStart.x = CurLoc.x + 1;
+			PosStart.y = CurLoc.y;
+			if (WallInRange(PosStart, PosEnd, G)) {
 				move = 5;
 			}
 			else {
@@ -331,7 +371,11 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 			}
 		}
 		else {
-			if (G.GB[CurLoc.x - 1][CurLoc.y].Entity == "DW") {
+			PosEnd.x = CurLoc.x - BombRange;
+			PosEnd.y = CurLoc.y;
+			PosStart.x = CurLoc.x - 1;
+			PosStart.y = CurLoc.y;
+			if (WallInRange(PosStart, PosEnd, G)) {
 				move = 5;
 			}
 			else {
@@ -439,7 +483,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	FindSafe(G, CurPos, safe, move);
 	if (safe) {
-		move = FindPath(targetLoc, CurPos, G);
+		move = FindPath(targetLoc, CurPos, G, G.RPE[PlayerID].BombRadius);
 		if (move == 1) {
 			nextLoc.x = CurPos.x;
 			nextLoc.y = CurPos.y - 1;
