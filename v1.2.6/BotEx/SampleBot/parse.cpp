@@ -30,11 +30,11 @@ void ParseBlocks(string str, GameState& G, int x, int y)
 			G.GB[x][y].Entity = "Player";
 			G.GB[x][y].Exploding = false;
 		}
-		else
-		{
+	}
+	else
+	{
 			G.GB[x][y].Entity = "Null";
 			G.GB[x][y].Exploding = false;			
-		}
 	}
 	i = str.find("Bomb",i);
 	for(; str[i] != ':'; i++);
