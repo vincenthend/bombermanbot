@@ -222,7 +222,7 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 	int NodeIdx = -1;
 	int i, j, k;
 	int wallcount;
-	int dNode, dCurLoc, move;
+	int dNode, dCurLoc, dTarget, move;
 
 	////////////////////
 	// Initialization //
@@ -276,20 +276,19 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 	//////////////////////
 	// Greedy Algorithm //
 	//////////////////////
-
-	dNode = abs(CurLoc.x - Target.x) + abs(CurLoc.y - Target.y);
-	dCurLoc = dNode;
+	dCurLoc = abs(CurLoc.x - Target.x) + abs(CurLoc.y - Target.y);
 	int max;
 
-	max = P[1];
-	j = 1;
+	max = 0;
+	j = 0;
+	dNode = 999;
 
 	//Find the most wall, with the most block, and reduced distance
-	for (i = 2; i <= NodeIdx; i++) {
-		//dNode = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
-		if (P[i] >= max && dNode >= abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y) && P[i]>=0) //Selection function
+	for (i = 1; i <= NodeIdx; i++) {
+		dTarget = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
+		if (P[i] >= max && dNode >= dTarget && P[i] >= 0 && (Node[i].x != CurLoc.x || Node[i].y != CurLoc.y)) //Selection function
 		{
-			dNode = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
+			dNode = dTarget;
 			max = P[i];
 			j = i;
 		}

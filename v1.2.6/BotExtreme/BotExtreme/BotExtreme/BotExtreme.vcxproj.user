@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LocalDebuggerCommandArguments>B "E:\kuda\v1.2.6\Game Engine\Replays\486694119\30\B"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>B "E:\rusa\Stima\Bomberman\v1.2.6\Game Engine\Replays\1154148637\0\B"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
