@@ -7,7 +7,7 @@
 #include <cmath>
 using namespace std;
 
-const int distOffset = -5; //Offset for targetfinding before switching to the least priority
+const int distOffset = -8; //Offset for targetfinding before switching to the least priority
 const int nodeOffset = 1; //Offset for pathfinding; Max Node Offset = 10
 
 struct BT
