@@ -4,5 +4,5 @@
     "NickName" :"BotExtreme",
     "BotType": "CPlusPlus",
     "ProjectLocation" : "BotExtreme\\",
-    "RunFile" : "BotExtreme\BotExtreme\\Debug"
+    "RunFile" : "BotExtreme\\Debug\\BotExtreme.exe"
 }

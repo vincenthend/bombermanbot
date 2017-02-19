@@ -8,7 +8,7 @@
 using namespace std;
 
 const int distOffset = 3; //Offset for targetfinding before switching to the least priority
-const int nodeOffset = 2; //Offset for pathfinding; Max Node Offset = 10
+const int nodeOffset = 1; //Offset for pathfinding; Max Node Offset = 10
 
 struct Point {
 	int x = 0;
@@ -286,8 +286,8 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 
 	//Find the most wall, with the most block, and reduced distance
 	for (i = 2; i <= NodeIdx; i++) {
-		dNode = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
-		if (P[i] >= max && dNode >= abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y) && dNode - dCurLoc <= 2 * nodeOffset) //Selection function
+		//dNode = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
+		if (P[i] >= max && dNode >= abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y) && P[i]>=0) //Selection function
 		{
 			dNode = abs(Node[i].x - Target.x) + abs(Node[i].y - Target.y);
 			max = P[i];
@@ -296,6 +296,7 @@ int FindPath(const Point& Target, const Point& CurLoc, const GameState& G) {
 	}
 
 	//Returned selected node j
+	cout << "Target X: " << Target.x << " Y: " << Target.y << endl;
 	cout << "CurLoc X: " << CurLoc.x << " Y: " << CurLoc.y << endl;
 	cout << "Selected node number :" << j << ", X: " << Node[j].x << " Y:" << Node[j].y << "with " << max << " walls" << endl;
 
@@ -433,6 +434,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	int move;
 	bool safe, safenext;
 	Point nextLoc;
+
+	safenext = true;
+	safe = true;
 
 	FindSafe(G, CurPos, safe, move);
 	if (safe) {
