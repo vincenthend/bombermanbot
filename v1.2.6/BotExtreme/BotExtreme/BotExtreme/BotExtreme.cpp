@@ -607,7 +607,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		}
 	}
 	else {
-		BT a = BomTengah(G, CurPos, timbomb);
+		BT a = BomTengah(G, CurPos, timbomb+1);
 		move = a.path;
 	}
 
