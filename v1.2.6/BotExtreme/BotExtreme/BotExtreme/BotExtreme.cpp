@@ -7,7 +7,7 @@
 #include <cmath>
 using namespace std;
 
-const int distOffset = -8; //Offset for targetfinding before switching to the least priority
+const int distOffset = -10; //Offset for targetfinding before switching to the least priority
 const int nodeOffset = 1; //Offset for pathfinding; Max Node Offset = 10
 
 struct BT
@@ -53,8 +53,14 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 	{
 		tengah = true;
 		j = 0;
-		while ((G.B[j].LocX != P.x) || (G.B[j].LocY != P.y)) j++;
+		while ((G.B[j].LocX != P.x) || (G.B[j].LocY != P.y))
+		{
+
+			j++;
+		}
+
 		timerbomb = G.B[j].Timer;
+
 	}
 	else
 	{
@@ -71,14 +77,16 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 	}
 	else
 	{
-		while (G.GB[P.x + i][P.y].Entity == "Null")
+		while ((G.GB[P.x + i][P.y].Entity == "Null") || (G.GB[P.x + i][P.y].Entity == "Player"))
 		{
+			cout << G.GB[P.x + i][P.y].Entity << endl;
 			i++; // skip Null, berenti saat entitynya bukan Null
 		}
+		cout << G.GB[P.x + i][P.y].Entity << endl;
 		if (G.GB[P.x + i][P.y].Entity == "Bomb")
 		{
 			//cari id bom
-
+			cout << "entry";
 			j = 0;
 
 			while (G.B[j].LocX != (P.x + i)) j++;
@@ -87,7 +95,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 			{
 				kanan = true;
 				kekanan = false;
-				timerbomb = G.B[j].Timer;
+				timerbomb = G.B[j].BombRadius;
 			}
 			else
 			{
@@ -113,7 +121,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 	}
 	else
 	{
-		while (G.GB[P.x - i][P.y].Entity == "Null") i++; // skip Null, berenti saat entitynya bukan Null
+		while ((G.GB[P.x - i][P.y].Entity == "Null") || (G.GB[P.x - i][P.y].Entity == "Player")) i++; // skip Null, berenti saat entitynya bukan Null
 		if (G.GB[P.x - i][P.y].Entity == "Bomb")
 		{
 			//cari id bom
@@ -123,7 +131,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 			// j adalah id bom
 			if (P.x <= (G.B[j].LocX + G.B[j].BombRadius))
 			{
-				timerbomb = G.B[j].Timer;
+				timerbomb = G.B[j].BombRadius;
 				kiri = true;
 				kekiri = false;
 			}
@@ -151,7 +159,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 	}
 	else
 	{
-		while (G.GB[P.x][P.y - i].Entity == "Null") i++; // skip Null, berenti saat entitynya bukan Null
+		while ((G.GB[P.x][P.y - i].Entity == "Null") || (G.GB[P.x][P.y - i].Entity == "Player")) i++; // skip Null, berenti saat entitynya bukan Null
 		if (G.GB[P.x][P.y - i].Entity == "Bomb")
 		{
 			//cari id bom
@@ -160,7 +168,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 			// j adalah id bom
 			if (P.y <= (G.B[j].LocY + G.B[j].BombRadius))
 			{
-				timerbomb = G.B[j].Timer;
+				timerbomb = G.B[j].BombRadius;
 				atas = true;
 				keatas = false;
 			}
@@ -188,7 +196,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 	}
 	else
 	{
-		while (G.GB[P.x][P.y + i].Entity == "Null") i++; // skip Null, berenti saat entitynya bukan Null
+		while ((G.GB[P.x][P.y + i].Entity == "Null") || (G.GB[P.x][P.y + i].Entity == "Player")) i++; // skip Null, berenti saat entitynya bukan Null
 		if (G.GB[P.x][P.y + i].Entity == "Bomb")
 		{
 			//cari id bom
@@ -197,7 +205,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 			// j adalah id bom
 			if (P.y >= (G.B[j].LocY - G.B[j].BombRadius))
 			{
-				timerbomb = G.B[j].Timer;
+				timerbomb = G.B[j].BombRadius;
 				bawah = true;
 				kebawah = false;
 			}
@@ -217,6 +225,7 @@ void FindSafe(GameState& G, Point P, bool& IsSafe, int& timerbomb)
 	IsSafe = tengah || kanan || atas || kiri || bawah;
 	IsSafe = !(IsSafe);
 }
+
 
 BT BomTengah(GameState& G, Point P, int timerbomb)
 {
@@ -586,6 +595,11 @@ int _tmain(int argc, _TCHAR* argv[])
 			nextLoc.x = CurPos.x;
 			nextLoc.y = CurPos.y + 1;
 			FindSafe(G, nextLoc, safenext, temp);
+		}
+		else {
+			if (G.NeffBomb > 2) {
+				move = 7;
+			}
 		}
 
 		if (!safenext) {
